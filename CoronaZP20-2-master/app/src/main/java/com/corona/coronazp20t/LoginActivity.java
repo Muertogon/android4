@@ -16,9 +16,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);//atidaromas langas (tuscias)
         setContentView(R.layout.activity_login);//pridek prie to lango, vaizda
         //kodas rasomas nuo cia
+        Button register=findViewById(R.id.register);
         Button login=findViewById(R.id.login);//susiejamas vaizde esantis elementa su kodu
         final EditText username=findViewById(R.id.username);
         final EditText password=findViewById(R.id.password);
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToRegistration=new Intent(LoginActivity.this,Registration.class);
+                startActivity(goToRegistration);
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,9 +46,6 @@ public class LoginActivity extends AppCompatActivity {
                     username.requestFocus();
                 }
 
-            }
-            public void onClick(View v){
-                if (Validation.isvalidUsernae)
             }
         });
 
